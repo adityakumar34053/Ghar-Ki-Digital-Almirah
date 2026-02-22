@@ -1,0 +1,186 @@
+/* style.css - Premium aur Animated Design */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Naya Gradient Background (Halka Neela aur Pila) */
+    background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px; 
+    box-sizing: border-box;
+}
+
+/* App Box ka Naya Premium Look */
+.app-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 16px;
+    /* Bada aur soft 3D Shadow */
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    
+    /* App ke khulte hi smooth animation */
+    animation: slideUp 0.6s ease-out forwards;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+    font-size: 26px;
+}
+
+p {
+    color: #7f8c8d;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Dabbon (Inputs) ka naya design */
+input[type="text"] {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease; /* Smooth effect ke liye */
+}
+
+/* Jab aap input box par click karenge (Glow Effect) */
+input[type="text"]:focus {
+    border-color: #74ebd5;
+    box-shadow: 0 0 8px rgba(116, 235, 213, 0.5);
+    outline: none;
+}
+
+/* Buttons ka shandaar 3D aur animated look */
+button {
+    background: linear-gradient(135deg, #6dd5ed, #2193b0); /* Neela Gradient */
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: transform 0.2s, box-shadow 0.2s; /* Click animation trigger */
+}
+
+/* Button par ungli/mouse rakhne par */
+button:hover {
+    transform: translateY(-3px); /* Thoda upar uthega */
+    box-shadow: 0 5px 15px rgba(33, 147, 176, 0.4);
+}
+
+/* Button ko dabane par */
+button:active {
+    transform: translateY(2px); /* Asli button ki tarah dabega */
+}
+
+/* "Save Karo" button ka alag Hara rang */
+button[onclick="samaanJodo()"] {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+button[onclick="samaanJodo()"]:hover {
+    box-shadow: 0 5px 15px rgba(56, 239, 125, 0.4);
+}
+
+/* Delete button ka alag Laal rang */
+button[onclick^="deleteSamaan"] {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b) !important;
+    margin-top: 15px;
+}
+
+/* Result Area ka design */
+#resultArea {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    color: #333;
+    font-size: 15px;
+    min-height: 20px;
+    border-left: 5px solid #2193b0; /* Left side mein ek neeli patti */
+    
+    /* Result aane par Pop-up animation */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* --- ANIMATIONS (Asli Jadoo Yahan Hai) --- */
+
+/* App ko neeche se upar lane wala animation */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Result ko aaram se fade hokar aane wala animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* --- NAYA CODE: Choose File Button ka Design --- */
+
+/* File upload area ka dabba (Jahan file ka naam dikhta hai) */
+input[type="file"] {
+    width: 90%;
+    padding: 10px;
+    background-color: #f4f6f9; /* Halka grey background */
+    border: 2px dashed #b2bec3; /* Dashed border (stylish look ke liye) */
+    border-radius: 8px;
+    font-size: 14px;
+    color: #2d3436;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+/* Jab mouse file dabbe par jaye */
+input[type="file"]:hover {
+    border-color: #2193b0;
+    background-color: #eafaf1;
+}
+
+/* ASLI JADOO: Andar ke "Choose File" button ka design */
+input[type="file"]::file-selector-button {
+    background: linear-gradient(135deg, #8e44ad, #9b59b6); /* Premium Purple Gradient */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Choose file button par hover effect */
+input[type="file"]::file-selector-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(142, 68, 173, 0.4);
+}
+
+/* Choose file button ko dabane par */
+input[type="file"]::file-selector-button:active {
+    transform: translateY(1px);
+}

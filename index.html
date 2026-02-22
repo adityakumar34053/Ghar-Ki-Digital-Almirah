@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghar Ki Digital Almirah - Pro</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <h2>Digital Almirah 🗄️</h2>
+        <p>Ghar ka koi bhi zaroori samaan ya document dhoondhein</p>
+        
+        <input type="text" id="searchBox" placeholder="Samaan dhoondhein (jaise: Marksheet)...">
+        <button onclick="khojo()">Dhoondho</button>
+
+        <div id="resultArea">Aapka result yahan dikhega...</div>
+
+
+        <hr style="margin: 30px 0; border: 0; border-top: 1px solid #ccc;">
+        
+        <h3 style="color: #333; margin-bottom: 15px;">Naya Samaan Rakhein ➕</h3>
+        
+        <input type="text" id="nayaNaam" placeholder="Samaan ka naam (jaise: 10th Documents)...">
+        <input type="text" id="nayiJagah" placeholder="Kahan rakha hai? (jaise: File No. 1)...">
+        
+        <p style="text-align: left; font-size: 14px; margin-bottom: 5px; color: #555;">Documents ki photo ya PDF chunein (Optional):</p>
+        <input type="file" id="samaanFile" accept="image/*,.pdf" multiple style="margin-bottom: 5px; width: 90%; padding: 5px;">
+        <p style="font-size: 12px; color: #28a745; margin-top: 0; margin-bottom: 15px; text-align: left;">(Aap ek sath kai photos select kar sakte hain)</p>
+        
+        <button onclick="samaanJodo()" style="background-color: #28a745;">Save Karo</button>
+        
+        <div id="saveMessage" style="margin-top: 10px; font-weight: bold;"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
