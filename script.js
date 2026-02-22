@@ -1,3 +1,39 @@
+// Password System
+const sahiPassword = "Aditya"; // Yahan aap apna manpasand password likh sakte hain
+
+function checkPassword() {
+    let input = document.getElementById("passInput").value;
+    let error = document.getElementById("loginError");
+
+    if (input === sahiPassword) {
+        // Agar password sahi hai toh login screen chhupao aur app dikhao
+        document.getElementById("login-screen").style.display = "none";
+        document.getElementById("main-app").style.display = "block";
+        
+        // Yaad rakhne ke liye ki login ho chuka hai (session)
+        sessionStorage.setItem("isLoggedIn", "true");
+    } else {
+        error.innerHTML = "❌ Galat Password! Dubara koshish karein.";
+    }
+}
+
+// Page refresh hone par check karein ki kya pehle se logged in hain
+window.onload = function() {
+    if (sessionStorage.getItem("isLoggedIn") === "true") {
+        document.getElementById("login-screen").style.display = "none";
+        document.getElementById("main-app").style.display = "block";
+    }
+}
+
+function logout() {
+    sessionStorage.clear();
+    location.reload(); // Page refresh karke wapas login screen par le jayega
+}
+
+// --- Aapka purana IndexedDB aur Khojo/SamaanJodo wala code yahan se niche rahega ---
+
+
+
 // script.js - Delete Feature aur IndexedDB ke sath
 
 let db;
