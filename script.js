@@ -190,5 +190,5 @@ function deleteSamaan(id) {
         request.onerror = function() {
             alert("❌ Error: Delete nahi ho paya!");
         };
-    }
+    } 
 }
