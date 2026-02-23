@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Almirah - Secure Pro</title>
-    
+    <title>Digital Almirah - VIP Edition</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div id="customAlertOverlay" class="alert-overlay">
+        <div id="customAlertBox" class="alert-box">
+            <h3 id="alertTitle">Alert!</h3>
+            <p id="alertText">Message yahan aayega.</p>
+            <div class="alert-buttons">
+                <button id="alertCancelBtn" onclick="closeAlert()" style="display:none; background: linear-gradient(135deg, #ff416c, #ff4b2b);">Radd Karein ❌</button>
+                <button id="alertOkBtn" onclick="closeAlert()" style="background: linear-gradient(135deg, #11998e, #38ef7d);">Theek Hai ✅</button>
+            </div>
+        </div>
+    </div>
 
     <div id="login-screen" class="app-container">
         <h2>Security Lock 🔒</h2>
         <p>Apni Digital Almirah kholne ke liye password daalein</p>
         
-        <input type="password" id="passInput" placeholder="Password yahan likhein..." style="width: 90%; padding: 12px; margin-bottom: 15px; border: 2px solid #ccc; border-radius: 8px;">
+        <input type="password" id="passInput" placeholder="Password yahan likhein...">
         
-        <button onclick="checkPassword()">Unlock Karein</button>
-        <p id="loginError" style="color: #ff4b2b; margin-top: 10px; font-weight: bold;"></p>
+        <button onclick="checkPassword()" style="background: linear-gradient(135deg, #00c6ff, #0072ff);">Unlock Karein</button>
     </div>
 
     <div id="main-app" class="app-container" style="display: none;">
@@ -25,27 +34,25 @@
         <p>Ghar ka koi bhi zaroori samaan dhoondhein</p>
         
         <input type="text" id="searchBox" placeholder="Samaan dhoondhein (jaise: Marksheet)...">
-        <button onclick="khojo()">Dhoondho</button>
+        <button onclick="khojo()" style="background: linear-gradient(135deg, #00c6ff, #0072ff);">Dhoondho</button>
 
         <div id="resultArea">Aapka result yahan dikhega...</div>
 
-
-        <hr style="margin: 30px 0; border: 0; border-top: 1px solid #ccc;">
+        <hr style="margin: 30px 0; border: 0; border-top: 2px dashed #a1c4fd;">
         
-        <h3 style="color: #2c3e50; margin-bottom: 15px;">Naya Samaan Rakhein ➕</h3>
+        <h3>Naya Samaan Rakhein ➕</h3>
         
         <input type="text" id="nayaNaam" placeholder="Samaan ka naam (jaise: 10th Docs)...">
         <input type="text" id="nayiJagah" placeholder="Kahan rakha hai? (jaise: Locker 1)...">
         
-        <p style="text-align: left; font-size: 14px; margin-bottom: 5px; color: #555;">Documents ya Photos chunein:</p>
+        <p style="text-align: left; font-size: 14px; margin-bottom: 5px; color: #555; font-weight: bold;">Documents ya Photos chunein:</p>
         <input type="file" id="samaanFile" accept="image/*,.pdf" multiple>
-        <p style="font-size: 12px; color: #28a745; margin-top: 0; margin-bottom: 15px; text-align: left;">(Aap ek sath kai files select kar sakte hain)</p>
         
         <button onclick="samaanJodo()">Save Karo</button>
         
         <div id="saveMessage" style="margin-top: 10px; font-weight: bold;"></div>
 
-        <button onclick="logout()" style="background: linear-gradient(135deg, #7f8c8d, #34495e); margin-top: 25px; font-size: 13px; padding: 10px; width: auto; min-width: 120px;">
+        <button onclick="logout()" style="background: linear-gradient(135deg, #f12711, #f5af19); margin-top: 25px;">
             Logout 🚪
         </button>
 
