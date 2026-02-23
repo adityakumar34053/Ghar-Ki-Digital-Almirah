@@ -1,12 +1,10 @@
-/* Google Fonts se stylish aur gol-matol font */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
 
 body {
     font-family: 'Nunito', sans-serif;
-    /* JADOO 1: Chalte-firte rang-birange background ka setup */
     background: linear-gradient(-45deg, #ff9a9e, #fecfef, #a1c4fd, #c2e9fb);
     background-size: 400% 400%;
-    animation: gradientBG 12s ease infinite; /* Yeh background ka color badalta rahega */
+    animation: gradientBG 12s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,23 +14,18 @@ body {
     box-sizing: border-box;
 }
 
-/* App Box ka Colorful aur Chamakta Design */
 .app-container {
     background: rgba(255, 255, 255, 0.95);
     border: 3px solid #fff;
     padding: 30px 25px;
-    border-radius: 25px; /* Ekdum gol kinare */
-    /* Mast pink/purple shadow */
+    border-radius: 25px;
     box-shadow: 0 15px 35px rgba(255, 105, 180, 0.25); 
     width: 100%;
     max-width: 420px;
     text-align: center;
-    
-    /* App khulte hi mast bouncy animation */
     animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
-/* JADOO 2: Heading par Rainbow Gradient Color */
 h2 {
     font-size: 28px;
     font-weight: 800;
@@ -43,7 +36,7 @@ h2 {
 }
 
 h3 {
-    color: #8e44ad; /* Naya samaan ki heading ke liye bright purple */
+    color: #8e44ad; 
     font-weight: 800;
     margin-bottom: 15px;
 }
@@ -55,7 +48,6 @@ p {
     margin-bottom: 20px; 
 }
 
-/* Rangeen Inputs (Search aur Text box) */
 input[type="text"], input[type="password"] {
     width: 100%;
     padding: 14px;
@@ -70,20 +62,15 @@ input[type="text"], input[type="password"] {
     transition: all 0.3s ease;
 }
 
-/* Jab text box par click karein toh color badlega */
 input[type="text"]:focus, input[type="password"]:focus {
     border-color: #a1c4fd;
     background: #fff;
     box-shadow: 0 0 15px rgba(161, 196, 253, 0.5);
     outline: none;
-    transform: scale(1.02); /* Click karne par thoda aage aayega */
+    transform: scale(1.02);
 }
 
-/* JADOO 3: Sabhi Buttons ke liye Chatak aur Bright Colors */
-
-/* 1. Dhoondho Button (Mast Bright Blue) */
 button {
-    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
     color: white;
     border: none;
     padding: 15px 25px;
@@ -94,37 +81,17 @@ button {
     cursor: pointer;
     width: 100%;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0, 114, 255, 0.3);
 }
 
 button:hover {
     transform: translateY(-5px); 
-    box-shadow: 0 12px 25px rgba(0, 114, 255, 0.5);
 }
 
-/* 2. Save Karo Button (Mast Bright Green/Teal) */
 button[onclick="samaanJodo()"] {
-    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    background: linear-gradient(135deg, #11998e, #38ef7d);
     box-shadow: 0 8px 20px rgba(56, 239, 125, 0.3);
-    margin-top: 10px;
-}
-button[onclick="samaanJodo()"]:hover {
-    box-shadow: 0 12px 25px rgba(56, 239, 125, 0.5);
 }
 
-/* 3. Logout Button (Mast Bright Orange/Red) */
-button[onclick="logout()"] {
-    background: linear-gradient(135deg, #f12711 0%, #f5af19 100%);
-    box-shadow: 0 8px 20px rgba(241, 39, 17, 0.3);
-    margin-top: 25px;
-    width: auto;
-    min-width: 150px;
-}
-button[onclick="logout()"]:hover {
-    box-shadow: 0 12px 25px rgba(241, 39, 17, 0.5);
-}
-
-/* File Upload Area ka rangeen design */
 input[type="file"] {
     width: 100%;
     padding: 12px;
@@ -132,7 +99,7 @@ input[type="file"] {
     border: 2px dashed #ff9a9e;
     border-radius: 12px;
     cursor: pointer;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     box-sizing: border-box;
     color: #ff416c;
     font-weight: 600;
@@ -144,9 +111,8 @@ input[type="file"]:hover {
     border-color: #ff416c;
 }
 
-/* Andar ka Choose File Button (Bright Purple) */
 input[type="file"]::file-selector-button {
-    background: linear-gradient(135deg, #b224ef 0%, #7579ff 100%);
+    background: linear-gradient(135deg, #b224ef, #7579ff);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -159,10 +125,8 @@ input[type="file"]::file-selector-button {
 
 input[type="file"]::file-selector-button:hover {
     transform: scale(1.1);
-    box-shadow: 0 5px 15px rgba(178, 36, 239, 0.4);
 }
 
-/* Result Area - Colorful Border ke sath */
 #resultArea {
     margin-top: 25px;
     padding: 20px;
@@ -178,10 +142,59 @@ input[type="file"]::file-selector-button:hover {
 
 #resultArea:empty { display: none; }
 
+/* VIP ALERT BOX CSS */
+.alert-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; 
+}
 
-/* --- ANIMATIONS --- */
+.alert-box {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 85%;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    border: 3px solid #a1c4fd;
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
 
-/* Background ka color badalne wala animation */
+.alert-box.show {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.alert-box h3 {
+    margin-top: 0;
+    font-size: 24px;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.alert-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+    gap: 15px;
+}
+
+.alert-buttons button {
+    margin: 0;
+    padding: 12px 15px;
+    font-size: 15px;
+}
+
+/* ANIMATIONS */
 @keyframes gradientBG {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -197,4 +210,3 @@ input[type="file"]::file-selector-button:hover {
     0% { opacity: 0; transform: translateY(-20px) scale(0.95); }
     100% { opacity: 1; transform: translateY(0) scale(1); }
 }
-
