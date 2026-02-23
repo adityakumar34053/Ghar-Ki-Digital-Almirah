@@ -1,186 +1,199 @@
-/* style.css - Premium aur Animated Design */
+/* Google Fonts se stylish aur gol-matol font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Naya Gradient Background (Halka Neela aur Pila) */
-    background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+    font-family: 'Nunito', sans-serif;
+    /* JADOO 1: Chalte-firte rang-birange background ka setup */
+    background: linear-gradient(-45deg, #ff9a9e, #fecfef, #a1c4fd, #c2e9fb);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite; /* Yeh background ka color badalta rahega */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    padding: 20px; 
+    padding: 20px;
     box-sizing: border-box;
 }
 
-/* App Box ka Naya Premium Look */
+/* App Box ka Colorful aur Chamakta Design */
 .app-container {
-    background-color: white;
-    padding: 30px;
-    border-radius: 16px;
-    /* Bada aur soft 3D Shadow */
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+    border: 3px solid #fff;
+    padding: 30px 25px;
+    border-radius: 25px; /* Ekdum gol kinare */
+    /* Mast pink/purple shadow */
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.25); 
     width: 100%;
     max-width: 420px;
     text-align: center;
     
-    /* App ke khulte hi smooth animation */
-    animation: slideUp 0.6s ease-out forwards;
+    /* App khulte hi mast bouncy animation */
+    animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
+/* JADOO 2: Heading par Rainbow Gradient Color */
 h2 {
-    color: #2c3e50;
+    font-size: 28px;
+    font-weight: 800;
     margin-bottom: 5px;
-    font-size: 26px;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-p {
-    color: #7f8c8d;
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-/* Dabbon (Inputs) ka naya design */
-input[type="text"] {
-    width: 90%;
-    padding: 12px;
+h3 {
+    color: #8e44ad; /* Naya samaan ki heading ke liye bright purple */
+    font-weight: 800;
     margin-bottom: 15px;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 15px;
-    transition: all 0.3s ease; /* Smooth effect ke liye */
 }
 
-/* Jab aap input box par click karenge (Glow Effect) */
-input[type="text"]:focus {
-    border-color: #74ebd5;
-    box-shadow: 0 0 8px rgba(116, 235, 213, 0.5);
+p { 
+    color: #555; 
+    font-size: 15px; 
+    font-weight: 600;
+    margin-bottom: 20px; 
+}
+
+/* Rangeen Inputs (Search aur Text box) */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    background: #f0f4f8;
+    border: 2px solid #d9e2ec;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* Jab text box par click karein toh color badlega */
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #a1c4fd;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(161, 196, 253, 0.5);
     outline: none;
+    transform: scale(1.02); /* Click karne par thoda aage aayega */
 }
 
-/* Buttons ka shandaar 3D aur animated look */
+/* JADOO 3: Sabhi Buttons ke liye Chatak aur Bright Colors */
+
+/* 1. Dhoondho Button (Mast Bright Blue) */
 button {
-    background: linear-gradient(135deg, #6dd5ed, #2193b0); /* Neela Gradient */
+    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
     color: white;
     border: none;
-    padding: 14px 25px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 800;
+    font-family: 'Nunito', sans-serif;
     cursor: pointer;
     width: 100%;
-    transition: transform 0.2s, box-shadow 0.2s; /* Click animation trigger */
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 114, 255, 0.3);
 }
 
-/* Button par ungli/mouse rakhne par */
 button:hover {
-    transform: translateY(-3px); /* Thoda upar uthega */
-    box-shadow: 0 5px 15px rgba(33, 147, 176, 0.4);
+    transform: translateY(-5px); 
+    box-shadow: 0 12px 25px rgba(0, 114, 255, 0.5);
 }
 
-/* Button ko dabane par */
-button:active {
-    transform: translateY(2px); /* Asli button ki tarah dabega */
-}
-
-/* "Save Karo" button ka alag Hara rang */
+/* 2. Save Karo Button (Mast Bright Green/Teal) */
 button[onclick="samaanJodo()"] {
-    background: linear-gradient(135deg, #11998e, #38ef7d);
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    box-shadow: 0 8px 20px rgba(56, 239, 125, 0.3);
+    margin-top: 10px;
 }
 button[onclick="samaanJodo()"]:hover {
-    box-shadow: 0 5px 15px rgba(56, 239, 125, 0.4);
+    box-shadow: 0 12px 25px rgba(56, 239, 125, 0.5);
 }
 
-/* Delete button ka alag Laal rang */
-button[onclick^="deleteSamaan"] {
-    background: linear-gradient(135deg, #ff416c, #ff4b2b) !important;
-    margin-top: 15px;
-}
-
-/* Result Area ka design */
-#resultArea {
+/* 3. Logout Button (Mast Bright Orange/Red) */
+button[onclick="logout()"] {
+    background: linear-gradient(135deg, #f12711 0%, #f5af19 100%);
+    box-shadow: 0 8px 20px rgba(241, 39, 17, 0.3);
     margin-top: 25px;
-    padding: 15px;
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    color: #333;
-    font-size: 15px;
-    min-height: 20px;
-    border-left: 5px solid #2193b0; /* Left side mein ek neeli patti */
-    
-    /* Result aane par Pop-up animation */
-    animation: fadeIn 0.5s ease-in-out;
+    width: auto;
+    min-width: 150px;
+}
+button[onclick="logout()"]:hover {
+    box-shadow: 0 12px 25px rgba(241, 39, 17, 0.5);
 }
 
-/* --- ANIMATIONS (Asli Jadoo Yahan Hai) --- */
-
-/* App ko neeche se upar lane wala animation */
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Result ko aaram se fade hokar aane wala animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* --- NAYA CODE: Choose File Button ka Design --- */
-
-/* File upload area ka dabba (Jahan file ka naam dikhta hai) */
+/* File Upload Area ka rangeen design */
 input[type="file"] {
-    width: 90%;
-    padding: 10px;
-    background-color: #f4f6f9; /* Halka grey background */
-    border: 2px dashed #b2bec3; /* Dashed border (stylish look ke liye) */
-    border-radius: 8px;
-    font-size: 14px;
-    color: #2d3436;
+    width: 100%;
+    padding: 12px;
+    background: #fef0f9;
+    border: 2px dashed #ff9a9e;
+    border-radius: 12px;
     cursor: pointer;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    color: #ff416c;
+    font-weight: 600;
     transition: all 0.3s ease;
-    margin-bottom: 15px;
 }
 
-/* Jab mouse file dabbe par jaye */
 input[type="file"]:hover {
-    border-color: #2193b0;
-    background-color: #eafaf1;
+    background: #ffe3f1;
+    border-color: #ff416c;
 }
 
-/* ASLI JADOO: Andar ke "Choose File" button ka design */
+/* Andar ka Choose File Button (Bright Purple) */
 input[type="file"]::file-selector-button {
-    background: linear-gradient(135deg, #8e44ad, #9b59b6); /* Premium Purple Gradient */
+    background: linear-gradient(135deg, #b224ef 0%, #7579ff 100%);
     color: white;
     border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 800;
     cursor: pointer;
     margin-right: 15px;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.3s ease;
 }
 
-/* Choose file button par hover effect */
 input[type="file"]::file-selector-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(142, 68, 173, 0.4);
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(178, 36, 239, 0.4);
 }
 
-/* Choose file button ko dabane par */
-input[type="file"]::file-selector-button:active {
-    transform: translateY(1px);
+/* Result Area - Colorful Border ke sath */
+#resultArea {
+    margin-top: 25px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid #a1c4fd;
+    box-shadow: 0 10px 20px rgba(161, 196, 253, 0.2);
+    animation: slideDown 0.4s ease-out;
+}
+
+#resultArea:empty { display: none; }
+
+
+/* --- ANIMATIONS --- */
+
+/* Background ka color badalne wala animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes popIn {
+    0% { opacity: 0; transform: scale(0.8) translateY(40px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes slideDown {
+    0% { opacity: 0; transform: translateY(-20px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
 }
