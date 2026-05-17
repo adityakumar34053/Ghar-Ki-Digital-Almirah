@@ -1,0 +1,14 @@
+{
+  "name": "GharManager Pro MAX AI",
+  "short_name": "GharManager",
+  "description": "AI-powered smart finance super app",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#007AFF",
+  "theme_color": "#007AFF",
+  "icons": [
+    { "src": "./assets/icon.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "./assets/icon.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
